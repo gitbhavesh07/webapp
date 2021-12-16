@@ -1,0 +1,36 @@
+<div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'SUGAR DATAS'
+      },
+      xAxis: {
+          categories: [
+            {% for entry in dataset %}'{{ entry.Month }}'{% if not forloop.last %}, {% endif %}{% endfor %}
+          ]
+      },
+      series: [{
+          name: 'systolic',
+          data: [
+            {% for entry in dataset %}{{ entry.Value1 }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'black'
+      }, {
+          name: 'diastolic',
+          data: [
+            {% for entry in dataset %}{{ entry.Value2 }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+    color: '#FFC0CB'
+      }]
+  });
+</script>
+<body>
+    <h2>wanna feed ur data?</h2>
+    <a href="index">
+        <button>clickhere!!</button>
+    </a>
+</body>

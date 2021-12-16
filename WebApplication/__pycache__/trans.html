@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+<head>
+    <title>MEDICIANS</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'trans.css' %}">
+
+
+
+</head>
+<body>
+<div id="abc">
+    <nav>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+
+            {% if user.is_authenticated %}
+
+            <li><a href="index">Enter</a></li>
+
+            <li><a href="average">Profile</a></li>
+            <li><a href="display">Edit</a></li>
+
+            <li><a href="uploading">Upload</a></li>
+            <li><a href="logout">Logout</a></li>
+
+
+            {% else %}
+
+            <li><a href="register">Register</a></li>
+            <li><a href="#">Contact</a></li>
+
+            {% endif %}
+
+        </ul>
+
+</nav>
+
+</div>
+<div class="content">
+    {% if user.is_authenticated %}
+    <h2>CHECK YOUR HEALTH BUDDY!!!</h2>
+    <p>click here!!</p>
+
+    <div class="content2"
+    <a href="index">
+
+    <button type="button"><span>SUGAR LEVEL</span></button>
+    </a>
+
+    <a href="ticket_class_view">
+
+    <button type="button"><span>BLOOD PRESSURE</span></button>
+    </a>
+    </div>
+    {% else %}
+    <h1>WELCOME MEDICIANS</h1>
+    <p>Welcome to our page buddy,Join hands with medi and rock your session</p>
+
+    <a href="login">
+        <button type="button"><span>LOGIN</span></button>
+    </a>
+    {% endif %}
+
+
+</div>
+</body>
+</html>

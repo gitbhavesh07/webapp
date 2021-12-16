@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>UPLOAD FILE</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <head>
+        <style>
+            .container {
+                height: 50px;
+                position: relative
+            }
+
+            .center {
+                margin: 0;
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="center">
+                <button type="submit" class="btn">Upload</button>
+            </div>
+        </div>
+    </body>
+</form>
+<br />
+<br />
+<h6>
+    Wanna see your uploaded reports?
+    <a href="list"> View Reports</a>
+</h6>
+
+{% endblock %}

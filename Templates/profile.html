@@ -1,0 +1,21 @@
+<html>
+<title>PROFILE</title>
+<body>
+    <h1>Profile</h1>
+    <p>Username: {{user.username}}</p>
+    <p>FirstName: {{user.first_name}}</p>
+    <p>LastName: {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+
+
+    {% for message in  messages %}
+    {% if forloop.counter <= 110 and forloop.counter >= 90 %}
+    <p>Average :{{message}}</p>
+    {% else %}
+    <p>Average :{{message}}</p>
+    <a href="#"><button type="button">CONSULT DOCTOR</button></a>
+    {% endif %}
+    {% endfor %}
+
+</body>
+</html>

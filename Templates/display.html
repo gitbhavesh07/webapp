@@ -1,0 +1,36 @@
+<htm1>
+    <head>
+        <title>edit records</title>
+    </head>
+<body>
+    <center>
+        <table border="1">
+            <tr>
+                <th>MONTH</th>
+                <th>SYSTOLIC</th>
+                <th>DIASTOLIC</th>
+            </tr>
+            {% for display1 in displays %}
+            <tr>
+                <td>
+                    {{ display1.Month }}
+                </td>
+                <td>
+                    {{ display1.Value1 }}
+                </td>
+                <td>
+                    {{ display1.Value2 }}
+
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+        <a href="editdisplay">
+            <button type="button"><span>EDIT AND UPDATE</span></button>
+        </a>
+
+
+    </center>
+</body>

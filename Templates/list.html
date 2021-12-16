@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% block content_header %}
+
+    <h6><b>REPORTS</b></h6>
+    <p>
+        <a href="{% url 'uploading' %}" class="btn btn-primary">Upload Report</a>
+    </p>
+  {% endblock %}
+
+    <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Report</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for list1 in lists %}
+            <tr>
+                <td>{{ list1.Name }}</td>
+                <td>
+                  <a href="{{ list1.Pdf.url }}" class="btn btn-primary btn-sm">
+                      DOWNLOAD REPORT
+                  </a>
+                </td>
+                  
+                <td>
+                    <form method="post" action="{% url 'delete_book' list1.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

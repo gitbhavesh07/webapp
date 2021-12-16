@@ -1,0 +1,306 @@
+<html>
+<head>
+    <title>FRONTEND VALUES BP</title>
+    <script>
+        function validate() {
+            var texts = Array.from(document.getElementsByClassName("text")).filter((val)=> val.value!="");
+		var text = new Set();
+            for (var i = 0; i < texts.length; i++)
+                text.add(texts[i].value);
+	    if(texts.length==0){
+		alert("enter atleast 1 month");
+		return false;
+		}
+            else if (texts.length === text.size )
+                return true;
+            else {
+                alert("Month has been repeated");
+                return false;
+		}
+	}
+    </script>
+  
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   
+</head>
+<body>
+    <p>BLOOD PRESSURE</p>
+    {% for message in  messages %}
+    <div class="alert alert-danger alert-dismissible fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Danger!</strong> {{message}}
+    </div>
+    {% endfor %}
+
+    <form action="index" method="post" onsubmit="return validate()">
+        {% csrf_token %}
+        <label>Month:</label>
+        <input class="text" list="Jan" name="JanMonth">
+        <datalist id="Jan">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+
+        <label>Systolic:</label>
+        <input type="number" name="JanValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="JanValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Feb" name="FebMonth">
+        <datalist id="Feb">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+
+
+
+        <label>Systolic:</label>
+        <input type="number" name="FebValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="FebValue2" placeholder="enter your value"></br></br>
+
+
+        <label>Month:</label>
+        <input class="text" list="Mar" name="MarMonth">
+        <datalist id="Mar">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="MarValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="MarValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Apr" name="AprMonth">
+        <datalist id="Apr">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+
+        <label>Systolic:</label>
+        <input type="number" name="AprValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="AprValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="May" name="MayMonth">
+        <datalist id="May">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="MayValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="MayValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Jun" name="JunMonth">
+        <datalist id="Jun">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="JunValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="JunValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Jul" name="JulMonth">
+        <datalist id="Jul">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="JulValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="JulValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Aug" name="AugMonth">
+        <datalist id="Aug">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="AugValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="AugValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Sep" name="SepMonth">
+        <datalist id="Sep">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="SepValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="SepValue2" placeholder="enter your value"></br></br>
+
+
+        <label>Month:</label>
+        <input class="text" list="Oct" name="OctMonth">
+        <datalist id="Oct">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="OctValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="OctValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Nov" name="NovMonth">
+        <datalist id="Nov">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="NovValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="NovValue2" placeholder="enter your value"></br></br>
+
+        <label>Month:</label>
+        <input class="text" list="Dec" name="DecMonth">
+        <datalist id="Dec">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <label>Systolic:</label>
+        <input type="number" name="DecValue" placeholder="enter your value">
+        <label>Diastolic:</label>
+        <input type="number" name="DecValue2" placeholder="enter your value"></br></br>
+
+        <input type="submit" name="sign-in" value="Graph">
+
+    </form>
+
+</body>
+</html>

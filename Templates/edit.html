@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>edit details</title>
+</head>
+<body>
+    <center>
+        <h1>edit and upload ur values here</h1>
+        <hr />
+        <form method="POST" action="updatedisplay">
+            {% csrf_token %}
+            <table border="0">
+                {% for displaymonthvalues in displaymonthvalue %}
+                <tr>
+                    <td>Month:</td>
+                    <td>{{displaymonthvalues.Month}}</td>
+                </tr>
+                <tr>
+                    <td>SYSTOLIC:</td>
+                    <td><input type="text" name="Value1" value="{{displaymonthvalues.Value1}}"</td>
+                </tr>
+                <tr>
+                    <td>DIASTOLIC:</td>
+                    <td><input type="text" name="Value2" value="{{displaymonthvalues.Value2}}"</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+            <input type="submit" value="Update" />
+            {% for message in  messages %}
+            <h6>{{message}}</h6>
+            {% endfor %}
+        </form>
+    </center>
+</body>
+</html>
